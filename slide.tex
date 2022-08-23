@@ -1,0 +1,134 @@
+% Quick start guide
+\documentclass{beamer}
+\usepackage{tikz}
+\usepackage{comment}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+
+\usepackage{xspace}
+\newcommand{\themename}{\textbf{\textsc{metropolis}}\xspace}
+
+
+
+
+\makeatletter
+
+\define@key{beamerframe}{t}[true]{% top
+    \beamer@frametopskip=0pt\relax%
+    \beamer@framebottomskip=0pt plus 1fill\relax%
+    \beamer@frametopskipautobreak=\beamer@frametopskip\relax%
+    \beamer@framebottomskipautobreak=\beamer@framebottomskip\relax%
+}
+
+\makeatother
+
+
+
+% \setbeamertemplate{itemize items}[circle]
+\usecolortheme{dracula}
+% \usecolortheme{metropolis}
+\setbeamertemplate{itemize item}[circle]
+
+
+\title{Konzept Master Theses}
+\subtitle{Machine Learning for the Prediciton of Brake Bending Parameters \emph{(working title)}}
+\author{Philipp Kurrle}
+\institute{HfT Stuttgart}
+\date{\today}
+
+
+
+\begin{document}
+
+% \maketitle
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\begin{frame}{Possible parameters}
+Use different single classifiers and different types of ensemble models to make predictions. \\
+
+\vspace{0.5cm}
+
+\begin{itemize}
+    \item Bend deduction
+    \item Springback
+    \item Edge-Cracking
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Model selection}
+
+\textbf{Tree-based learning algorithms} might be the best because of 
+\textbf{high explain ability}, \textbf{less computational power} and most importantly for me \textbf{\underline{less data to train the model}}.
+
+\vspace{0.5cm}
+
+\textbf{Single classifiers}
+\begin{itemize}
+        \item Multilayer Perceptron (MLP)
+        \item Support Vector Machine (SVM)
+        \item Decision Tree (DT) 
+        \item Random Forest (RF)
+        \item Logistic Regression (LR )
+        \item Naive Bayes (NB) 
+        \item k-Nearest Neighbours (kNN)
+\end{itemize}    
+
+\end{frame}
+
+
+\begin{frame}{Model selection 2}
+
+\textbf{Ensemble Models}
+\begin{itemize}
+        \item Majority voting
+        \item Stacking models
+    \end{itemize}
+    
+\end{frame}
+
+
+\begin{frame}{Dataset generation}
+
+The dataset will be generated either \textbf{manually} or \textbf{with data from a company}. 
+
+\begin{center}
+    \begin{tabular}{ |c|c|c|c| } 
+        \hline
+        Parameters & Mechanical Press \\
+        \hline
+        Load Tonnage (T) & tbd... \\
+        Material & JSC440, JSC590, JSH440, JSH590 \\
+        Thickness of blank (s) & 1.0 mm, 1.2 mm, 1.4 mm, 1.6 mm \\ 
+        Width of blank (w) & 20 mm, 50 mm \\ 
+        Bend angle & 60, 90 and 120 \\
+        \hline
+    \end{tabular}
+\end{center}
+\begin{itemize}
+    \item \textbf{Goal:} Maybe 400 samples?
+\end{itemize}
+    
+\end{frame}
+
+\begin{frame}{Evaluation}
+\begin{itemize}
+    \item Performance evaluation based on metric e.g. \emph{accuracy, recall, precision} and \emph{F-Score}.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Test}\vspace{-0.1cm}
+\begin{columns}
+% Column 1
+\begin{column}{0.6\textwidth}
+\end{column}
+% Column 2
+\begin{column}{0.4\textwidth}
+    \includegraphics[scale=0.4]{fig/code.jpg}
+\end{column}
+\end{columns} 
+
+\end{frame}
+
+\end{document}
